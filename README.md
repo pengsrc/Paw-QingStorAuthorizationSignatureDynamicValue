@@ -1,5 +1,5 @@
 # Paw-QingStorAuthorizationSignatureDynamicValue
-QingStor Authorisation Signature Dynamic Value Extension for [Paw](https://paw.cloud)
+QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.cloud)
 
 
 
