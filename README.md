@@ -15,6 +15,12 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 
 
+## Usage
+
+[Download latest version](https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/releases), and put it into Paw's extension directory.
+
+
+
 ## Development
 
 ### Prerequisites
