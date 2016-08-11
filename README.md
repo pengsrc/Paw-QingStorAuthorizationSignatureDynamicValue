@@ -5,7 +5,7 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 ## About QingStor
 
-[QingStor](https://docs.qingcloud.com/guide/object_storage.html) is an object storage service provided by [QingCloud](http://www.qingcloud.com/). It provides low-cost and reliable online storage service with unlimited storage space, high read and write performance, high reliability and data safety, fine-grained access control, and easy to use API.
+[QingStor](https://docs.qingcloud.com/guide/object_storage.html) is an object storage service. It provides low-cost and reliable online storage service with unlimited storage space, high read and write performance, high reliability and data safety, fine-grained access control, and easy to use API.
 
 
 
