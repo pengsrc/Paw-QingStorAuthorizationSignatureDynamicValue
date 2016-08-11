@@ -21,6 +21,16 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 
 
+## Example
+
+There's a example paw file(`test/QingStor.paw`) to test this extension and QingStor. 
+
+To use these apis, you need to create an API Key in your [QingCloud Console](https://console.qingcloud.com/access_keys/). 
+
+Please refer to [QingStor Documentation](https://docs.qingcloud.com/qingstor/api/index.html)  for more information.
+
+
+
 ## Development
 
 ### Prerequisites
