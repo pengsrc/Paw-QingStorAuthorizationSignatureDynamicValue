@@ -57,9 +57,8 @@ make install
 
 * v1.0.0 (2016-08-06)
   * QingStor Authorisation Signature Dynamic Value
-* v1.0.1(2016-08-19)
+* v1.0.2 (2016-08-19)
   * Change 'QingStor Access Key' type to String
-
 
 
 
