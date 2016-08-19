@@ -88,10 +88,12 @@ export default class QingStorAuthorizationSignature {
   }
 
   sign() {
-    console.log(this.buildStringToSign());
-
     const hmacHashHex = CryptoJS.HmacSHA256(this.buildStringToSign(), this.secretAccessKey);
     const base64String = CryptoJS.enc.Base64.stringify(hmacHashHex);
+
+    console.log(this.buildStringToSign());
+    console.log(this.accessKey);
+    console.log(base64String);
 
     return `QS-HMAC-SHA256 ${this.accessKey}:${base64String}`;
   }
