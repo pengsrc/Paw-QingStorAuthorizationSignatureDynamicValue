@@ -6,21 +6,13 @@ class QingStorAuthorizationSignatureDynamicValue {
       return '** signature is only generated during request send **';
     }
 
-    const request = context.getCurrentRequest();
-    const headers = request.headers;
-
     const signature = new QingStorAuthorizationSignature(
+      context.getCurrentRequest(),
       this.accessKey,
       this.secretAccessKey,
-      {
-        'Verb': request.method,
-        'Content-MD5': headers['Content-MD5'],
-        'Content-Type': headers['Content-Type'],
-        'Date': headers.Date,
-        'Canonicalized Headers': this.canonicalizedHeaders,
-        'Canonicalized Resource': this.canonicalizedResource,
-      }
+      this.locationStyle || 'virtual_host_style'
     );
+
     return signature.sign();
   }
 }
@@ -32,8 +24,13 @@ Object.assign(QingStorAuthorizationSignatureDynamicValue, {
   inputs: [
     DynamicValueInput('accessKey', 'QingStor Access Key', 'String'),
     DynamicValueInput('secretAccessKey', 'QingStor Secret Access Key', 'SecureValue'),
-    DynamicValueInput('canonicalizedHeaders', 'Canonicalized Headers', 'KeyValueList'),
-    DynamicValueInput('canonicalizedResource', 'Canonicalized Resource', 'String'),
+    DynamicValueInput('locationStyle', 'Location Style', 'Select', {
+      choices: {
+        'virtual_host_style': 'Virtual-Host Style',
+        'path_style': 'Path Style',
+      },
+      persisted: true,
+    }),
   ],
 });
 

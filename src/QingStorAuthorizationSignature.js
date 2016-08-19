@@ -1,24 +1,47 @@
 import CryptoJS from 'crypto-js';
 
 export default class QingStorAuthorizationSignature {
-  constructor(accessKey, secretAccessKey, signOptions) {
-    this.accessKey = accessKey;
-    this.secretAccessKey = secretAccessKey;
-    this.signOptions = signOptions;
+  static buildCanonicalizedHeaders(requestHeaders) {
+
+    const canonicalizedHeaderKeys = [];
+    for (const canonicalizedHeaderKey in requestHeaders) {
+      if (requestHeaders.hasOwnProperty(canonicalizedHeaderKey)) {
+        if (canonicalizedHeaderKey.startsWith('X-QS-')) {
+          canonicalizedHeaderKeys.push(canonicalizedHeaderKey);
+        }
+      }
+    }
+    canonicalizedHeaderKeys.sort();
+
+    const canonicalizedHeaders = [];
+    for (let i = 0; i < canonicalizedHeaderKeys.length; i++) {
+      canonicalizedHeaders.push(
+        `${canonicalizedHeaderKeys[i].toLowerCase()}:${requestHeaders[canonicalizedHeaderKeys[i]]}`
+      );
+    }
+
+    const canonicalizedHeadersString = canonicalizedHeaders.join(`\n`);
+
+    return canonicalizedHeadersString === '' ? '' : `${canonicalizedHeadersString}\n`;
   }
 
-  parseCanonicalizedHeaders(canonicalizedHeaders) {
-    if (canonicalizedHeaders) {
-      const raws = canonicalizedHeaders;
+  static buildCanonicalizedResource(request, locationStyle) {
+    const originalParamsString = new DynamicValue('com.luckymarmot.RequestURLDynamicValue', {
+      request: request.id,
+      includeScheme: false,
+      includeHost: false,
+      includeParameters: true,
+    }).getEvaluatedString();
+
+    let paramsString = originalParamsString;
+    if (originalParamsString.includes('?')) {
+      const resources = originalParamsString.split('?');
+      const subResource = resources[1];
+      const raws = subResource.split('&');
       const map = {};
       for (let i = 0; i < raws.length; i++) {
-        const raw = raws[i].toString();
-        if (raw.endsWith(',true')) {
-          let piece = raw.replace(',true', '');
-          piece = piece.replace(',', 'SPECIAL_CHARACTER');
-          const parts = piece.split('SPECIAL_CHARACTER');
-          map[parts[0].toLowerCase()] = parts[1];
-        }
+        const pieces = raws[i].split('=');
+        map[pieces[0]] = pieces[1];
       }
 
       const keys = [];
@@ -29,66 +52,56 @@ export default class QingStorAuthorizationSignature {
       }
       keys.sort();
 
-      const headers = [];
+      const values = [];
       for (let i = 0; i < keys.length; i++) {
-        headers.push(`${keys[i]}:${map[keys[i]]}`);
+        if (map[keys[i]] === undefined) {
+          values.push(`${keys[i]}`);
+        } else {
+          values.push(`${keys[i]}=${map[keys[i]]}`);
+        }
       }
 
-      const headersString = headers.join("\n");
+      paramsString = `${resources[0]}?${values.join('&')}`;
+    }
 
-      if (headersString !== '') {
-        return headersString + "\n";
-      }
+    if (locationStyle === 'virtual_host_style') {
+      const hostString = new DynamicValue('com.luckymarmot.RequestURLDynamicValue', {
+        request: request.id,
+        includeScheme: false,
+        includeHost: true,
+        includeParameters: false,
+      }).getEvaluatedString();
+      const bucketName = hostString.split('.')[0];
+
+      return `/${bucketName}${paramsString.replace(/^\/\?/g, '?')}`;
+    }
+
+    if (locationStyle === 'path_style') {
+      return paramsString === '' ? '/' : paramsString;
     }
 
     return '';
   }
 
-  parseCanonicalizedResource(canonicalizedResource) {
-    if (canonicalizedResource) {
-      if (canonicalizedResource.includes('?')) {
-        const resources = canonicalizedResource.split('?');
-        const subResource = resources[1];
-        const raws = subResource.split('&');
-        const map = {};
-        for (let i = 0; i < raws.length; i++) {
-          const pieces = raws[i].split('=');
-          map[pieces[0]] = pieces[1];
-        }
-
-        const keys = [];
-        for (const key in map) {
-          if (map.hasOwnProperty(key)) {
-            keys.push(key);
-          }
-        }
-        keys.sort();
-
-        const values = [];
-        for (let i = 0; i < keys.length; i++) {
-          if (map[keys[i]] === undefined) {
-            values.push(`${keys[i]}`);
-          } else {
-            values.push(`${keys[i]}=${map[keys[i]]}`);
-          }
-        }
-        return `${resources[0]}?${values.join('&')}`;
-      }
-      return canonicalizedResource;
-    }
-    return '';
+  constructor(request, accessKey, secretAccessKey, locationStyle) {
+    this.request = request;
+    this.accessKey = accessKey;
+    this.secretAccessKey = secretAccessKey;
+    this.locationStyle = locationStyle;
   }
 
   buildStringToSign() {
-    const options = this.signOptions;
+    const request = this.request;
+    const headers = request.headers;
+    const style = this.locationStyle;
 
     return (
-      `${options.Verb}\n` +
-      `${options['Content-MD5'] ? options['Content-MD5'] : ''}\n` +
-      `${options['Content-Type'] ? options['Content-Type'] : ''}\n` +
-      `${options.Date ? options.Date : ''}\n` +
-      `${this.parseCanonicalizedHeaders(options['Canonicalized Headers'])}` +
-      `${this.parseCanonicalizedResource(options['Canonicalized Resource'])}`
+      `${request.method}\n` +
+      `${headers['Content-MD5'] ? headers['Content-MD5'] : ''}\n` +
+      `${headers['Content-Type'] ? headers['Content-Type'] : ''}\n` +
+      `${headers.Date ? headers.Date : ''}\n` +
+      `${QingStorAuthorizationSignature.buildCanonicalizedHeaders(headers)}` +
+      `${QingStorAuthorizationSignature.buildCanonicalizedResource(request, style)}`
     );
   }
 

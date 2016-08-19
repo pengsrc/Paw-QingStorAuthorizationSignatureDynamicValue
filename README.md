@@ -11,7 +11,7 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 ## Screenshot
 
-![Version 1.0](screenshots/version_1.0.png)
+![Version 1.5.0](screenshots/version_1.5.0.png)
 
 
 
@@ -60,7 +60,9 @@ make install
 * v1.0.2 (2016-08-19)
   * Change 'QingStor Access Key' type to String
 
-
+* v1.5.0 (2016-08-19)
+  * Severe Bug Fix
+  * Refactor
 
 
 Contributing
