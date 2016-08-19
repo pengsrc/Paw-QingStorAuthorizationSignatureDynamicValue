@@ -33,7 +33,12 @@ export default class QingStorAuthorizationSignature {
       for (let i = 0; i < keys.length; i++) {
         headers.push(`${keys[i]}:${map[keys[i]]}`);
       }
-      return headers.join('n');
+
+      const headersString = headers.join("\n");
+
+      if (headersString !== '') {
+        return headersString + "\n";
+      }
     }
 
     return '';
