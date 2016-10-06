@@ -1,72 +1,59 @@
 # Paw-QingStorAuthorizationSignatureDynamicValue
 QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.cloud)
 
-
-
 ## About QingStor
 
 [QingStor](https://docs.qingcloud.com/guide/object_storage.html) provides low-cost and reliable online storage service with unlimited storage space, high read and write performance, high reliability and data safety, fine-grained access control, and easy to use API.
-
-
 
 ## Screenshot
 
 ![Version 1.5.0](screenshots/version_1.5.0.png)
 
-
-
 ## Usage
 
 [Download latest version](https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/releases), and put it into Paw's extension directory.
-
-
 
 ## Example
 
 There's a example paw file(`test/QingStor.paw`) to test this extension and QingStor. 
 
-To use these apis, you need to create an API Key in your [QingCloud Console](https://console.qingcloud.com/access_keys/). 
+To use these APIs, you need to create an API Key in your [QingCloud Console](https://console.qingcloud.com/access_keys/). 
 
 Please refer to [QingStor Documentation](https://docs.qingcloud.com/qingstor/api/index.html)  for more information.
-
-
 
 ## Development
 
 ### Prerequisites
 
-```shell
+``` shell
 npm install
 ```
 
 ### Build
 
-```shell
+``` shell
 npm run build
 ```
 
 ### Install
 
-```shell
+``` shell
 make install
 ```
-
-
 
 ## ChangeLog
 
 * v1.0.0 (2016-08-06)
-  * QingStor Authorisation Signature Dynamic Value
+  * QingStor Authorization Signature Dynamic Value
+
 * v1.0.2 (2016-08-19)
-  * Change 'QingStor Access Key' type to String
+  * Change "QingStor Access Key" type to String
 
 * v1.5.0 (2016-08-19)
   * Severe Bug Fix
   * Refactor
 
-
-Contributing
-------------
+## Contributing
 
 1. Fork it ( https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -75,7 +62,6 @@ Contributing
 5. Create a new Pull Request
 
 
+## LICENSE
 
-LICENSE
--------
 The MIT License.
