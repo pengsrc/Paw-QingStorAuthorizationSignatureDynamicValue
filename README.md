@@ -67,7 +67,7 @@ make install
 
 ## LICENSE
 
-The MIT License.
+The GPLv3 License. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
 
 [v1.5.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
 [v1.0.2]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2
