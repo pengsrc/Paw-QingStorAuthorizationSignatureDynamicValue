@@ -68,3 +68,7 @@ make install
 ## LICENSE
 
 The MIT License.
+
+[v1.5.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
+[v1.0.2]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2
+[v1.0.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/853aed9...v1.0.2
