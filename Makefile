@@ -1,3 +1,5 @@
+.PHONY: watch build clean install archive
+
 identifier=com.prettyxw.paw.extensions.QingStorAuthorizationSignatureDynamicValue
 extensions_dir=$(HOME)/Library/Containers/com.luckymarmot.Paw/Data/Library/Application Support/com.luckymarmot.Paw/Extensions/
 
