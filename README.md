@@ -3,7 +3,10 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 ## About QingStor
 
-[QingStor](https://docs.qingcloud.com/guide/object_storage.html) provides low-cost and reliable online storage service with unlimited storage space, high read and write performance, high reliability and data safety, fine-grained access control, and easy to use API.
+[QingStor](https://www.qingstor.com) provides low-cost and reliable online
+storage service with unlimited storage space, high read and write performance,
+high reliability and data safety, fine-grained access control, and easy to use
+API.
 
 ## Screenshot
 
@@ -11,7 +14,8 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 ## Usage
 
-[Download latest version](https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/releases), and put it into Paw's extension directory.
+[Download latest version](https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/releases),
+and put it into Paw's extension directory.
 
 ## Example
 
@@ -19,7 +23,7 @@ There's a example paw file(`test/QingStor.paw`) to test this extension and QingS
 
 To use these APIs, you need to create an API Key in your [QingCloud Console](https://console.qingcloud.com/access_keys/).
 
-Please refer to [QingStor Documentation](https://docs.qingcloud.com/qingstor/api/index.html)  for more information.
+Please refer to [QingStor Documentation](https://docs.qingcloud.com/qingstor/api/index.html) for more information.
 
 ## Development
 
@@ -43,28 +47,28 @@ make install
 
 ## ChangeLog
 
-#### [v2.0.0] - 2016-12-19
+### [v2.0.0] - 2016-12-19
 
-##### Added
+#### Added
 - Support QingStor signature version 2
 
-##### Fixed
+#### Fixed
 - Fix bug in signature version 1 
 
-#### [v1.5.0] - 2016-08-19
+### [v1.5.0] - 2016-08-19
 
-##### Fixed
+#### Fixed
 - Severe Bug Fix
 - Refactor
 
-#### [v1.0.2] - 2016-08-19
+### [v1.0.2] - 2016-08-19
 
-##### Changed
+#### Changed
 - Change "QingStor Access Key" type to String
 
-#### v1.0.0 - 2016-08-06
+### v1.0.0 - 2016-08-06
 
-##### Added
+#### Added
 - QingStor Authorization Signature Dynamic Value
 
 ## Contributing
