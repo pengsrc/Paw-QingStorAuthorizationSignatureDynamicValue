@@ -43,7 +43,7 @@ make install
 
 ## ChangeLog
 
-#### [v2.0.0] - 2016-08-19
+#### [v2.0.0] - 2016-12-19
 
 ##### Added
 - Support QingStor signature version 2
