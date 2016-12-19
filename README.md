@@ -44,21 +44,26 @@ make install
 ## ChangeLog
 
 #### [v2.0.0] - 2016-08-19
+
 ##### Added
 - Support QingStor signature version 2
+
 ##### Fixed
 - Fix bug in signature version 1 
 
 #### [v1.5.0] - 2016-08-19
+
 ##### Fixed
 - Severe Bug Fix
 - Refactor
 
 #### [v1.0.2] - 2016-08-19
+
 ##### Changed
 - Change "QingStor Access Key" type to String
 
 #### v1.0.0 - 2016-08-06
+
 ##### Added
 - QingStor Authorization Signature Dynamic Value
 
