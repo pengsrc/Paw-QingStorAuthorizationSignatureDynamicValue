@@ -7,7 +7,7 @@ QingStor Authorization Signature Dynamic Value Extension for [Paw](https://paw.c
 
 ## Screenshot
 
-![Version 1.5.0](screenshots/version_1.5.0.png)
+![Version 2.0.0](screenshots/version_2.0.0.png)
 
 ## Usage
 
@@ -43,6 +43,12 @@ make install
 
 ## ChangeLog
 
+#### [v2.0.0] - 2016-08-19
+##### Added
+- Support QingStor signature version 2
+##### Fixed
+- Fix bug in signature version 1 
+
 #### [v1.5.0] - 2016-08-19
 ##### Fixed
 - Severe Bug Fix
@@ -52,7 +58,7 @@ make install
 ##### Changed
 - Change "QingStor Access Key" type to String
 
-#### [v1.0.0] - 2016-08-06
+#### v1.0.0 - 2016-08-06
 ##### Added
 - QingStor Authorization Signature Dynamic Value
 
@@ -69,6 +75,6 @@ make install
 
 The GPLv3 License. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
 
+[v2.0.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.5.0...v2.0.0
 [v1.5.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
 [v1.0.2]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2
-[v1.0.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/853aed9...v1.0.2
