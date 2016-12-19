@@ -1,8 +1,7 @@
 import CryptoJS from 'crypto-js';
 
-export default class QingStorAuthorizationSignature {
+export default class QingStorAuthorizationSignatureV1 {
   static buildCanonicalizedHeaders(requestHeaders) {
-
     const canonicalizedHeaderKeys = [];
     for (const canonicalizedHeaderKey in requestHeaders) {
       if (requestHeaders.hasOwnProperty(canonicalizedHeaderKey)) {
@@ -57,7 +56,7 @@ export default class QingStorAuthorizationSignature {
         if (map[keys[i]] === undefined) {
           values.push(`${keys[i]}`);
         } else {
-          values.push(`${keys[i]}=${map[keys[i]]}`);
+          values.push(`${keys[i]}=${map[keys[i]].replace('%20', '+')}`);
         }
       }
 
@@ -100,8 +99,8 @@ export default class QingStorAuthorizationSignature {
       `${headers['Content-MD5'] ? headers['Content-MD5'] : ''}\n` +
       `${headers['Content-Type'] ? headers['Content-Type'] : ''}\n` +
       `${headers.Date ? headers.Date : ''}\n` +
-      `${QingStorAuthorizationSignature.buildCanonicalizedHeaders(headers)}` +
-      `${QingStorAuthorizationSignature.buildCanonicalizedResource(request, style)}`
+      `${QingStorAuthorizationSignatureV1.buildCanonicalizedHeaders(headers)}` +
+      `${QingStorAuthorizationSignatureV1.buildCanonicalizedResource(request, style)}`
     );
   }
 
@@ -110,8 +109,7 @@ export default class QingStorAuthorizationSignature {
     const base64String = CryptoJS.enc.Base64.stringify(hmacHashHex);
 
     console.log(this.buildStringToSign());
-    console.log(this.accessKey);
-    console.log(base64String);
+    console.log(`QS-HMAC-SHA256 ${this.accessKey}:${base64String}`);
 
     return `QS-HMAC-SHA256 ${this.accessKey}:${base64String}`;
   }

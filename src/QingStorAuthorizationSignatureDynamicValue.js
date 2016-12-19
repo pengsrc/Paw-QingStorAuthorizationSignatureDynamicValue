@@ -1,4 +1,5 @@
-import QingStorAuthorizationSignature from './QingStorAuthorizationSignature';
+import QingStorAuthorizationSignatureV1 from './QingStorAuthorizationSignatureV1';
+import QingStorAuthorizationSignatureV2 from './QingStorAuthorizationSignatureV2';
 
 class QingStorAuthorizationSignatureDynamicValue {
   evaluate(context) {
@@ -6,14 +7,26 @@ class QingStorAuthorizationSignatureDynamicValue {
       return '** signature is only generated during request send **';
     }
 
-    const signature = new QingStorAuthorizationSignature(
-      context.getCurrentRequest(),
-      this.accessKey,
-      this.secretAccessKey,
-      this.locationStyle || 'virtual_host_style'
-    );
-
-    return signature.sign();
+    switch (this.signatureVersion) {
+      case 'v1': {
+        const signature = new QingStorAuthorizationSignatureV1(
+          context.getCurrentRequest(),
+          this.accessKey,
+          this.secretAccessKey,
+          this.locationStyle
+        );
+        return signature.sign();
+      }
+      case 'v2': {
+        const signature = new QingStorAuthorizationSignatureV2(
+          context.getCurrentRequest(),
+          this.accessKey,
+          this.secretAccessKey,
+          this.locationStyle
+        );
+        return signature.sign();
+      }
+    }
   }
 }
 
@@ -29,6 +42,15 @@ Object.assign(QingStorAuthorizationSignatureDynamicValue, {
         'virtual_host_style': 'Virtual-Host Style',
         'path_style': 'Path Style',
       },
+      defaultValue: 'path_style',
+      persisted: true,
+    }),
+    DynamicValueInput('signatureVersion', 'Signature Version', 'Select', {
+      choices: {
+        'v1': 'v1 (deprecated)',
+        'v2': 'v2',
+      },
+      defaultValue: 'v2',
       persisted: true,
     }),
   ],
