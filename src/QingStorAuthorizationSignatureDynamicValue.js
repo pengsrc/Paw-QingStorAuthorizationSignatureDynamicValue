@@ -35,7 +35,7 @@ Object.assign(QingStorAuthorizationSignatureDynamicValue, {
   title: 'QingStor Authorization Signature',
   help: 'https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue',
   inputs: [
-    DynamicValueInput('accessKey', 'QingStor Access Key', 'String'),
+    DynamicValueInput('accessKey', 'QingStor Access Key ID', 'String'),
     DynamicValueInput('secretAccessKey', 'QingStor Secret Access Key', 'SecureValue'),
     DynamicValueInput('locationStyle', 'Location Style', 'Select', {
       choices: {
