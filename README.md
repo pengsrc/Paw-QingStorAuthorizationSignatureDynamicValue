@@ -47,13 +47,18 @@ make install
 
 ## ChangeLog
 
+### [Unreleased] - 2016-12-22
+
+#### Fixed
+- Fix signature bug
+
 ### [v2.0.0] - 2016-12-19
 
 #### Added
 - Support QingStor signature version 2
 
 #### Fixed
-- Fix bug in signature version 1 
+- Fix bug in signature version 1
 
 ### [v1.5.0] - 2016-08-19
 
@@ -84,6 +89,7 @@ make install
 
 The GPLv3 License. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
 
+[Unreleased]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v2.0.0...master
 [v2.0.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.5.0...v2.0.0
 [v1.5.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
 [v1.0.2]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2
