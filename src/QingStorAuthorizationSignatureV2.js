@@ -62,7 +62,7 @@ export default class QingStorAuthorizationSignatureV2 {
         }
       }
 
-      paramsString = `${resources[0]}?${values.join('&')}`;
+      paramsString = values.length > 0 ? `${resources[0]}?${values.join('&')}` : '';
     }
 
     if (locationStyle === 'virtual_host_style') {
