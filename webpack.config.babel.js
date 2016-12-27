@@ -1,14 +1,14 @@
 import webpack from 'webpack';
 
+const name = 'QingStorAuthorizationSignatureDynamicValue';
+
 module.exports = {
-  entry: [
-    './src/QingStorAuthorizationSignatureDynamicValue.js',
-  ],
+  entry: [`./src/${name}.js`],
   output:{
-    path: './build/com.prettyxw.paw.extensions.QingStorAuthorizationSignatureDynamicValue',
+    path: `./build/com.prettyxw.paw.extensions.${name}`,
     pathInfo: true,
     publicPath: '/build/',
-    filename: 'QingStorAuthorizationSignatureDynamicValue.js',
+    filename: `${name}.js`,
   },
   module: {
     loaders: [
