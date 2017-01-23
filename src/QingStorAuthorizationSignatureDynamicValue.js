@@ -11,7 +11,7 @@ class QingStorAuthorizationSignatureDynamicValue {
       case 'v1': {
         const signature = new QingStorAuthorizationSignatureV1(
           context.getCurrentRequest(),
-          this.accessKey,
+          this.accessKeyID,
           this.secretAccessKey,
           this.locationStyle
         );
@@ -20,7 +20,7 @@ class QingStorAuthorizationSignatureDynamicValue {
       case 'v2': {
         const signature = new QingStorAuthorizationSignatureV2(
           context.getCurrentRequest(),
-          this.accessKey,
+          this.accessKeyID,
           this.secretAccessKey,
           this.locationStyle
         );
@@ -35,7 +35,7 @@ Object.assign(QingStorAuthorizationSignatureDynamicValue, {
   title: 'QingStor Authorization Signature',
   help: 'https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue',
   inputs: [
-    DynamicValueInput('accessKey', 'QingStor Access Key ID', 'String'),
+    DynamicValueInput('accessKeyID', 'QingStor Access Key ID', 'String'),
     DynamicValueInput('secretAccessKey', 'QingStor Secret Access Key', 'SecureValue'),
     DynamicValueInput('locationStyle', 'Location Style', 'Select', {
       choices: {

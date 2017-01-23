@@ -106,9 +106,9 @@ export default class QingStorAuthorizationSignatureV2 {
     ].includes(query);
   }
 
-  constructor(request, accessKey, secretAccessKey, locationStyle) {
+  constructor(request, accessKeyID, secretAccessKey, locationStyle) {
     this.request = request;
-    this.accessKey = accessKey;
+    this.accessKeyID = accessKeyID;
     this.secretAccessKey = secretAccessKey;
     this.locationStyle = locationStyle;
   }
@@ -133,8 +133,8 @@ export default class QingStorAuthorizationSignatureV2 {
     const base64String = CryptoJS.enc.Base64.stringify(hmacHashHex);
 
     console.log(this.buildStringToSign());
-    console.log(`QS ${this.accessKey}:${base64String}`);
+    console.log(`QS ${this.accessKeyID}:${base64String}`);
 
-    return `QS ${this.accessKey}:${base64String}`;
+    return `QS ${this.accessKeyID}:${base64String}`;
   }
 }
