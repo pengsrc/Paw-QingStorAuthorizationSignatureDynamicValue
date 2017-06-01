@@ -47,7 +47,7 @@ make install
 
 ## ChangeLog
 
-### [Unreleased] - 2016-12-22
+### [v2.0.1] - 2017-06-01
 
 #### Fixed
 - Fix signature bug
@@ -89,7 +89,7 @@ make install
 
 The GPLv3 License. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
 
-[Unreleased]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v2.0.0...master
+[v2.0.1]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.5.0...v2.0.0
 [v1.5.0]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
 [v1.0.2]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2

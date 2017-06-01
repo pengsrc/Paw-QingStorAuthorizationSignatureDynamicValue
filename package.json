@@ -1,6 +1,6 @@
 {
   "name": "paw-qingstor-authorization-signature-dynamic-value",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "QingStor Authorisation Signature Dynamic Value for Paw",
   "main": "src/QingStorAuthorizationSignatureDynamicValue.js",
   "scripts": {
