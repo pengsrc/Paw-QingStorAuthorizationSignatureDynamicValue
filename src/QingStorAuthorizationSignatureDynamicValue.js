@@ -31,9 +31,9 @@ class QingStorAuthorizationSignatureDynamicValue {
 }
 
 Object.assign(QingStorAuthorizationSignatureDynamicValue, {
-  identifier: 'com.prettyxw.paw.extensions.QingStorAuthorizationSignatureDynamicValue',
+  identifier: 'io.pjw.paw.extensions.QingStorAuthorizationSignatureDynamicValue',
   title: 'QingStor Authorization Signature',
-  help: 'https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue',
+  help: 'https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue',
   inputs: [
     DynamicValueInput('accessKeyID', 'QingStor Access Key ID', 'String'),
     DynamicValueInput('secretAccessKey', 'QingStor Secret Access Key', 'SecureValue'),

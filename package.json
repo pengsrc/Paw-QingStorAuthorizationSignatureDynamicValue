@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue.git"
+    "url": "git+https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue.git"
   },
   "author": "Peng Jingwen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/issues"
+    "url": "https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/issues"
   },
-  "homepage": "https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue#readme",
+  "homepage": "https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue#readme",
   "devDependencies": {
     "babel-core": "^6.13.1",
     "babel-loader": "^6.2.4",

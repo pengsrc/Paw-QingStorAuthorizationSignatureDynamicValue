@@ -5,7 +5,7 @@ const name = 'QingStorAuthorizationSignatureDynamicValue';
 module.exports = {
   entry: [`./src/${name}.js`],
   output:{
-    path: `./build/com.prettyxw.paw.extensions.${name}`,
+    path: `./build/io.pjw.paw.extensions.${name}`,
     pathInfo: true,
     publicPath: '/build/',
     filename: `${name}.js`,

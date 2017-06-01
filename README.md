@@ -14,7 +14,7 @@ API.
 
 ## Usage
 
-[Download latest version](https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/releases),
+[Download latest version](https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/releases),
 and put it into Paw's extension directory.
 
 ## Example
@@ -78,7 +78,7 @@ make install
 
 ## Contributing
 
-1. Fork it ( https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/fork )
+1. Fork it ( https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -89,7 +89,7 @@ make install
 
 The GPLv3 License. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
 
-[Unreleased]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v2.0.0...master
-[v2.0.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.5.0...v2.0.0
-[v1.5.0]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
-[v1.0.2]: https://github.com/prettyxw/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2
+[Unreleased]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v2.0.0...master
+[v2.0.0]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.5.0...v2.0.0
+[v1.5.0]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.2...v1.5.0
+[v1.0.2]: https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/compare/v1.0.0...v1.0.2
