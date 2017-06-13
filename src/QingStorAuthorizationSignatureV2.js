@@ -100,6 +100,7 @@ export default class QingStorAuthorizationSignatureV2 {
       'upload_id',
       'mirror',
       "logging",
+      "lifecycle",
       'delete',
       'response-expires',
       'response-cache-control',
