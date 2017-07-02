@@ -32,10 +32,10 @@ export default class QingStorAuthorizationSignatureV2 {
       includeParameters: true,
     }).getEvaluatedString();
 
+    const resources = originalParamsString.split('?');
+    const subResource = resources[1];
     let paramsString = originalParamsString;
     if (originalParamsString.includes('?')) {
-      const resources = originalParamsString.split('?');
-      const subResource = resources[1];
       const raws = subResource.split('&');
       const map = {};
       for (let i = 0; i < raws.length; i++) {
@@ -80,7 +80,10 @@ export default class QingStorAuthorizationSignatureV2 {
     }
 
     if (locationStyle === 'path_style') {
-      return paramsString === '' ? '/' : paramsString;
+      if (resources[0] === "") {
+        resources[0] = "/";
+      }
+      return paramsString === '' ? resources[0] : paramsString;
     }
 
     return '';
