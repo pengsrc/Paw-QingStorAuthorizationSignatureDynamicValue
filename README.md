@@ -14,6 +14,10 @@ API.
 
 ## Usage
 
+Install from Paw's official website, [https://paw.cloud/extensions/QingStorAuthorizationSignatureDynamicValue](https://paw.cloud/extensions/QingStorAuthorizationSignatureDynamicValue).
+
+or
+
 [Download latest version](https://github.com/pengsrc/Paw-QingStorAuthorizationSignatureDynamicValue/releases),
 and put it into Paw's extension directory.
 
